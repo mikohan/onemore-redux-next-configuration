@@ -1,6 +1,6 @@
 import * as t from "../types";
 
-export function setNameAction() {
+export function setNameAction(name) {
   return {
     type: t.SET_NAME,
     payload: {
@@ -16,7 +16,7 @@ export const userAction = () => {
   return (dispatch, getState) => {
     const name = getState();
     setTimeout(() => {
-      dispatch(setNameAction());
+      dispatch(setNameAction(name));
     }, 2000);
   };
 };
